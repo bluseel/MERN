@@ -28,7 +28,7 @@ const Course = ({ course, coursesWithOverdueTasks, openEditModal, openDeleteModa
 
     console.log('adding:',newTask);
     try {
-      const response = await fetch(`http://localhost:5000/sections/${selectedSectionId}/courses/${course._id}/tasks/`, {
+      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${selectedSectionId}/courses/${course._id}/tasks/`, {
         method: "POST",
         body: JSON.stringify({ 
           name: newTask.name, 

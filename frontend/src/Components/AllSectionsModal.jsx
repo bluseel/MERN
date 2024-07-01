@@ -14,7 +14,7 @@ const AllSectionsModal = ({ isOpen, onRequestClose, sections, onSelectSection, f
 
   const onCreateSection = async (newSectionName) => {
     try {
-      const response = await fetch(`http://localhost:5000/sections/`, {
+      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/`, {
         method: "POST",
         body: JSON.stringify({ name: newSectionName }),
         headers: {
@@ -29,7 +29,7 @@ const AllSectionsModal = ({ isOpen, onRequestClose, sections, onSelectSection, f
 
   const onEditSection = async (sectionId, sectionName) => {
     try {
-      const response = await fetch(`http://localhost:5000/sections/${sectionId}`, {
+      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${sectionId}`, {
         method: "PATCH",
         body: JSON.stringify({ name: sectionName }),
         headers: {
@@ -44,7 +44,7 @@ const AllSectionsModal = ({ isOpen, onRequestClose, sections, onSelectSection, f
 
   const onDeleteSection = async (sectionId) => {
     try {
-      const response = await fetch(`http://localhost:5000/sections/${sectionId}`, {
+      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${sectionId}`, {
         method: "DELETE"
       });
       fetchAllSections();

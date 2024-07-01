@@ -13,7 +13,7 @@
   
     const fetchAllSections = async () => {
       try {
-        const response = await fetch("http://localhost:5000/sections", {
+        const response = await fetch("mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections", {
           method: "GET"
         });
         const result = await response.json();
