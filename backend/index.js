@@ -8,66 +8,63 @@ const sectionRoute = require("./routes/sectionRoute");
 const courseRoute = require("./routes/courseRoute");
 const taskRoute = require("./routes/taskRoute");
 
-import { FrontEnd_BASE_URL } from '../.config';
+const cors = require('cors');
 
-const cors = require('cors')
-app.use(cors())
+// Import the frontend base URL from the configuration file
+const { FrontEnd_BASE_URL } = require('../.config');  // Changed from `import` to `require`
+
+app.use(cors({
+    origin: [FrontEnd_BASE_URL],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    credentials: true
+}));
+
 app.use(express.json());
 
-const receivedURI = process.env.uri
-
+const receivedURI = process.env.uri;
 
 let userName = "admin";
 let userPassword = "admin";
 
-//its just a function
-const startDatabase = async (customURI) =>{
-    await mongoose.disconnect()
-    let isDatabaseConnected = true;
-    //connecting mondodb 
-    await mongoose.connect(customURI)
-    // mongoose.connect(uri2)
-    .then(()=>{
-        console.log("connected succesfully!");
-    })
-    .catch((error)=>{
-        isDatabaseConnected = error.ok
-    })
-    return (isDatabaseConnected)
-    
-}
-
-
-//signing in
-app.post('/signin', async (req, res) => {
-    const { userName, userPassword} = req.body;
-    console.log(`--         id:${userName},pass:${userPassword}`)
-    const uri2 = `mongodb+srv://${userName}:${userPassword}@meow.yzdygsk.mongodb.net/?retryWrites=true&w=majority&appName=meow`
-    let notConnected = await startDatabase(uri2)
-    
-
-    //if it doesn't connect to edit database, it connects using readonly default
-    let successfullSignedIn=true;
-    if(notConnected === 0){
-        console.log('wrong credential so connecting to deafult')
-        notConnected = await startDatabase(process.env.URIdefault)
-        successfullSignedIn=false;
+// Function to start the database
+const startDatabase = async (customURI) => {
+    try {
+        await mongoose.disconnect();
+        await mongoose.connect(customURI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log("Connected successfully!");
+        return true;
+    } catch (error) {
+        console.error("Database connection error:", error.message);
+        return false;
     }
-    // }
+};
 
-    res.status(200).json(successfullSignedIn);
+// Signing in
+app.post('/signin', async (req, res) => {
+    const { userName, userPassword } = req.body;
+    console.log(`Attempting to sign in with id: ${userName}, pass: ${userPassword}`);
+    const uri2 = `mongodb+srv://${userName}:${userPassword}@meow.yzdygsk.mongodb.net/?retryWrites=true&w=majority&appName=meow`;
+    let isConnected = await startDatabase(uri2);
+
+    if (!isConnected) {
+        console.log('Invalid credentials, attempting to connect to default database');
+        isConnected = await startDatabase(process.env.URIdefault);
+    }
+
+    res.status(200).json({ success: isConnected });
 });
 
+// Start default database connection
+startDatabase(process.env.URIdefault);
 
-startDatabase(`mongodb+srv://admin:admin@meow.yzdygsk.mongodb.net/?retryWrites=true&w=majority&appName=meow`)
-
-
-app.listen(process.env.port || 8000, () => {
-    console.log(`Server is listening on http://localhost:${process.env.port}`);
+app.listen(process.env.PORT || 8000, () => {
+    console.log(`Server is listening on http://localhost:${process.env.PORT || 8000}`);
 });
-app.use(sectionRoute);
-app.use(courseRoute);
-app.use(taskRoute);
 
-
-
+// Use routes after middleware
+app.use('/sections', sectionRoute);
+app.use('/courses', courseRoute);
+app.use('/tasks', taskRoute);
