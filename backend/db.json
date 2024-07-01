@@ -1,0 +1,56 @@
+{ 
+  "sections":[
+    {
+      "sectionName" : "FA22-BCS-D",
+      "courses": [
+        {
+          "id": 1,
+          "name": "DSA - Shahid Bhatti",
+          "tasks": [
+            { "id": 1, "name": "Task 11", "date": "2024-06-21", "detail": "Detail for Task 1", "link":"https://www.google.com/" },
+            { "id": 2, "name": "Task 12", "date": "2024-06-21", "detail": "Detail for Task 2", "link":"https://www.google.com/" },
+            { "id": 3, "name": "Task 13", "date": "2024-06-21", "detail": "Detail for Task 3", "link":"https://www.google.com/" }
+          ]
+        },
+
+        {
+          "id": 2,
+          "name": "OOP - Shahid Bhatti",
+          "tasks": [
+            { "id": 1, "name": "Task 21", "date": "2024-06-21", "detail": "Detail for Task 1", "link":"https://www.google.com/"},
+            { "id": 2, "name": "Task 22", "date": "2024-06-21", "detail": "Detail for Task 2", "link":"https://www.google.com/"},
+            { "id": 3, "name": "Task 23", "date": "2024-06-27", "detail": "Detail for Task 3", "link":"https://www.google.com/"}
+          ]
+        }
+      ]
+    },
+
+
+
+    {
+      "sectionName" : "FA22-BCS-C",
+      "courses": [
+        {
+          "id": 1,
+          "name": "DSA - Shahid Bhatti",
+          "tasks": [
+            { "id": 1, "name": "Task 11", "date": "2024-06-21", "detail": "Detail for Task 1", "link":"https://www.google.com/" },
+            { "id": 2, "name": "Task 12", "date": "2024-06-21", "detail": "Detail for Task 2", "link":"https://www.google.com/" },
+            { "id": 3, "name": "Task 13", "date": "2024-06-21", "detail": "Detail for Task 3", "link":"https://www.google.com/" }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "OOP - Shahid Bhatti",
+          "tasks": [
+            { "id": 1, "name": "Task 21", "date": "2024-06-21", "detail": "Detail for Task 1", "link":"https://www.google.com/"},
+            { "id": 2, "name": "Task 22", "date": "2024-06-21", "detail": "Detail for Task 2", "link":"https://www.google.com/"},
+            { "id": 3, "name": "Task 23", "date": "2024-06-27", "detail": "Detail for Task 3", "link":"https://www.google.com/"}
+          ]
+        }
+      ]
+    
+    }
+
+  ]
+}

@@ -1,0 +1,48 @@
+.header{
+    background-color: rgb(40, 40, 164);
+    color: white;
+
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameTitle{
+    display: flex;
+    width:fit-content;
+    flex-direction: column;
+}
+
+.univName {
+    font-weight: 700;
+}
+
+img{
+    width: 90px;
+}
+
+.campus{
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.sectionName{
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 2px solid #000;
+    text-align: center;
+    background-color: blue;
+
+    
+}
+
+.sectionName:hover{
+    background-color: rgba(0, 0, 255, 0.642);
+    cursor: pointer;
+}
+
+.sectionName:active{
+    background-color: rgb(61, 61, 196);
+    cursor:default;
+}

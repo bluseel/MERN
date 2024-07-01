@@ -1,0 +1,270 @@
+
+
+
+.heading{
+    letter-spacing: 1.2vw;
+    text-align: center;
+}
+
+.allcourses{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px;
+}
+
+.course{
+    box-shadow: 3px 3px rgba(56, 54, 54, 0.288);
+
+}
+
+.courseTitle{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border:2px solid black ;
+    height: fit-content;
+    .courseName{
+        padding: 0.4rem;        
+    }
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none; 
+
+}
+
+.adminControls{
+    display: flex;
+    
+    button{
+        border: none;
+        background-color: transparent;
+        
+        img{
+            max-width:2rem;
+        }
+    }
+
+    .editButton{
+        background-color: #0056B3;
+    }
+
+    .deleteButton{
+        background-color: #C82333;
+    }
+
+}
+
+
+.courseTitle:hover{
+    background-color: rgba(255, 255, 0, 0.555);
+    cursor: pointer;
+}
+
+
+.courseTitle:active{
+    background-color: rgb(190, 190, 30);
+    cursor: pointer;
+    translate: 2px 2px;
+    box-shadow:none;
+}
+
+
+
+/* course title red */
+.courseTitleRed{
+    background-color: red;
+
+    border:2px solid black ;
+    
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none; 
+}
+
+.courseTitleRed:hover{
+    background-color: rgba(255, 0, 0, 0.671);
+    cursor: pointer;
+}
+
+
+.courseTitleRed:active{
+    background-color: rgb(192, 15, 15);
+    cursor: pointer;
+    translate: 2px 2px;
+    box-shadow:none;
+}
+
+
+/* content ------------------- */
+
+
+.content {
+    display: inline-block;
+}
+
+
+.content.show {
+    display: block;
+
+  }
+  
+.content.hide {
+    display: none;
+}
+
+
+/* ---------------------------table=----------------------- */
+.tasktable {
+    width: 100%;
+    border-collapse: collapse;
+    
+    border: 2px solid black;
+}
+
+.tasktable th, .tasktable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.tasktable th {
+    
+    background-color: #f2f2f2;
+}
+
+.tasktable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tasktable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.tasktable a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.tasktable a:hover {
+    text-decoration: underline;
+}   
+
+
+
+/* ------------------- MODAL -------------------  */
+/* Blurs the background and positions the modal in the center */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px); /* Blurs the background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styles the modal */
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+  }
+  
+  /* Styles for the modal header */
+  .modal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Styles the buttons */
+  .modal button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styles for the cancel button */
+  .modal button:last-child {
+    background-color: #dc3545;
+  }
+  
+  .modal button:last-child:hover {
+    background-color: #c82333;
+  }
+  
+  /* Styles the input fields */
+  .modal input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  /* Styles for the prompt text */
+  .modal p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* ----------------------------SIGN IN -------------------------------- */
+  .signInButtonContainer{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    button{
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: green; /* Example background color */
+        color: white; /* Text color */
+        border: none;
+        cursor: pointer;
+        outline: none; /* Remove outline on focus */
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Smooth background color transition */      
+    }
+
+}
+
+/* ------------------------------------CREATE COURSE/Task------------------------------------ */
+.createContainer{
+    display: flex;
+    justify-content: center;
+    .blueButton{
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #3498db; /* Blue color */
+        color: #ffffff; /* White text */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+
+        /* Optional: Add box shadow for depth */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}

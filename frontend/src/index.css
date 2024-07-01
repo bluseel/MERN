@@ -1,0 +1,37 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base font-size */
+html {
+  font-size: 16px; /* Default to 16px */
+}
+
+/* Mobile phones (portrait and landscape) */
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 10px; /* 14px on phones */
+  }
+}
+
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  html {
+    font-size: 15px; /* 15px on tablets */
+  }
+}
+
+/* PCs (laptops and desktops) */
+@media only screen and (min-width: 901px) {
+  html {
+    font-size: 16px; /* 16px on PCs */
+  }
+}
