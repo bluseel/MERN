@@ -9,7 +9,13 @@ const courseRoute = require("./routes/courseRoute");
 const taskRoute = require("./routes/taskRoute");
 
 const cors = require('cors')
-app.use(cors())
+app.use(cors(
+    {
+        origin : ["mern-server-rose.vercel.app"],
+        methods: ["POST", "GET", "DELETE", "PUT", "PATCH"],
+        credentials: true
+    }
+))
 app.use(express.json());
 
 const receivedURI = process.env.uri
