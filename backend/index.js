@@ -11,13 +11,7 @@ const taskRoute = require("./routes/taskRoute");
 import { FrontEnd_BASE_URL } from '../.config';
 
 const cors = require('cors')
-app.use(cors(
-    {
-        origin : [FrontEnd_BASE_URL],
-        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-        credentials: true
-    }
-))
+app.use(cors())
 app.use(express.json());
 
 const receivedURI = process.env.uri
