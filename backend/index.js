@@ -8,7 +8,10 @@ const sectionRoute = require("./routes/sectionRoute");
 const courseRoute = require("./routes/courseRoute");
 const taskRoute = require("./routes/taskRoute");
 
-import { FrontEnd_BASE_URL } from '../.config';
+//for local testing and online deployement both urls
+// const FrontEnd_BASE_URL = "http://localhost:5173";
+export const FrontEnd_BASE_URL = "https://mern-backend-git-vercelfeature-bluseels-projects.vercel.app";
+
 
 const cors = require('cors')
 app.use(cors(
