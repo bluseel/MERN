@@ -12,7 +12,7 @@ const cors = require('cors')
 app.use(cors(
     {
         origin : ["mern-frontend-git-vercelfeature-bluseels-projects.vercel.app"],
-        methods: ["POST", "GET", "DELETE", "PUT", "PATCH"],
+        methods: ["GET"],
         credentials: true
     }
 ))
