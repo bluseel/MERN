@@ -11,7 +11,7 @@ const taskRoute = require("./routes/taskRoute");
 const cors = require('cors')
 app.use(cors(
     {
-        origin : ["mern-backend-git-vercelfeature-bluseels-projects.vercel.app"],
+        origin : ["mern-frontend-git-vercelfeature-bluseels-projects.vercel.app"],
         methods: ["POST", "GET", "DELETE", "PUT", "PATCH"],
         credentials: true
     }
