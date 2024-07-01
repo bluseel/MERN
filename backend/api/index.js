@@ -23,7 +23,6 @@ app.use(cors(
 //forlocal
 // app.use(cors())
 
-
 app.use(express.json());
 
 const receivedURI = process.env.uri
