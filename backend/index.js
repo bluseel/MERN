@@ -9,18 +9,19 @@ const courseRoute = require("./routes/courseRoute");
 const taskRoute = require("./routes/taskRoute");
 
 //for local testing and online deployement both urls
-// const FrontEnd_BASE_URL = "http://localhost:5173";
-const FrontEnd_BASE_URL = "https://mern-frontend-git-vercelfeature-bluseels-projects.vercel.app";
+// const FrontEnd_BASE_URL = "https://mern-frontend-git-vercelfeature-bluseels-projects.vercel.app";
 
 
 const cors = require('cors')
-app.use(cors(
-    {
-        origin : [FrontEnd_BASE_URL],
-        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-        credentials: true
-    }
-))
+// app.use(cors(
+//     {
+//         origin : [FrontEnd_BASE_URL],
+//         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+//         credentials: true
+//     }
+// ))
+
+app.use(cors())
 app.use(express.json());
 
 const receivedURI = process.env.uri

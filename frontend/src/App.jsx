@@ -4,7 +4,7 @@ import Header from './Header'
 
 export const App = () => {
   const dummySectoin= {
-    "id": "asdfasdfafdglkasdfjasdf2dsa",
+    "id": "61826f2d61bb28a52e7aa8e3",
     "name": "Find_your_section",
     "courses": [
         {
