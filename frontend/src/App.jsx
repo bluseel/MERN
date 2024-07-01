@@ -8,7 +8,7 @@ export const App = () => {
     "name": "Find_your_section",
     "courses": [
         {
-            "name": "Click to see how to use this site",
+            "name": "Click to see how to use this site vercel",
             "id": "asdfasdfafdglkasdfjasdf",
             "tasks": [
                 {
