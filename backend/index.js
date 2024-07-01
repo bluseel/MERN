@@ -10,7 +10,7 @@ const taskRoute = require("./routes/taskRoute");
 
 //for local testing and online deployement both urls
 // const FrontEnd_BASE_URL = "http://localhost:5173";
-const FrontEnd_BASE_URL = "https://mern-backend-git-vercelfeature-bluseels-projects.vercel.app";
+const FrontEnd_BASE_URL = "https://mern-frontend-git-vercelfeature-bluseels-projects.vercel.app";
 
 
 const cors = require('cors')
