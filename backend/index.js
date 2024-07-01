@@ -8,10 +8,12 @@ const sectionRoute = require("./routes/sectionRoute");
 const courseRoute = require("./routes/courseRoute");
 const taskRoute = require("./routes/taskRoute");
 
+import { FrontEnd_BASE_URL } from '../.config';
+
 const cors = require('cors')
 app.use(cors(
     {
-        origin : ["mern-frontend-git-vercelfeature-bluseels-projects.vercel.app"],
+        origin : [FrontEnd_BASE_URL],
         methods: ["GET"],
         credentials: true
     }
