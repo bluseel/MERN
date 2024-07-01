@@ -14,7 +14,10 @@ const cors = require('cors')
 //for vercel online
 app.use(cors(
     {
-        origin : ["https://mern-frontend-lake.vercel.app"],
+        // "taskstracker.netlify.app" for netlfiy npm run build
+        // original : https://mern-frontend-lake.vercel.app
+        origin : ["https://mern-frontend-lake.vercel.app",
+                    "https://tasktracker0.netlify.app"],
         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
         credentials: true
     }
