@@ -4,14 +4,6 @@ const { Section } = require('../models/userModel'); // Adjust the path as necess
 
 const router = express.Router();
 
-// Default route
-router.get("/", async (req, res) => {
-    try {
-        res.status(200).send("meow");
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
 
 // C - CREATE SECTION
 router.post("/sections", async (req, res) => {

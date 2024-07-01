@@ -42,6 +42,17 @@ const startDatabase = async (customURI) => {
     }
 };
 
+
+// Default route
+router.get("/", async (req, res) => {
+    try {
+        res.status(200).send("meow");
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
 // Signing in
 app.post('/signin', async (req, res) => {
     const { userName, userPassword } = req.body;
