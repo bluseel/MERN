@@ -99,7 +99,7 @@ const Course = ({ course, coursesWithOverdueTasks, openEditModal, openDeleteModa
             {course.tasks.map((task) => 
             
             (
-              <tr key={task.id}>
+              <tr key={task._id}>
                 <td>{task.name}</td>
                 <td>{task.description}</td>
                 <td>{formatDate(task.date)}</td>
