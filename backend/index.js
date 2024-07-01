@@ -9,22 +9,22 @@ const courseRoute = require("./routes/courseRoute");
 const taskRoute = require("./routes/taskRoute");
 
 const cors = require('cors')
+app.use(express.json());
 
 
 //for vercel online
-// app.use(cors(
-//     {
-//         origin : ["https://mern-frontend-git-vercelfeature-bluseels-projects.vercel.app"],
-//         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-//         credentials: true
-//     }
-// ))
+app.use(cors(
+    {
+        origin : ["https://mern-backend-git-vercelfeature-bluseels-projects.vercel.app"],
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+        credentials: true
+    }
+))
 
 //forlocal test
-app.use(cors())
+// app.use(cors())
 
 
-app.use(express.json());
 
 const receivedURI = process.env.uri
 
