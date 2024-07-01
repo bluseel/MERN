@@ -4,40 +4,17 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const sectionRoute = require("./routes/sectionRoute");
-const courseRoute = require("./routes/courseRoute");
-const taskRoute = require("./routes/taskRoute");
+const sectionRoute = require("../routes/sectionRoute");
+const courseRoute = require("../routes/courseRoute");
+const taskRoute = require("../routes/taskRoute");
 
 const cors = require('cors')
+
+//forlocal
+app.use(cors())
+
+
 app.use(express.json());
-
-
-const originVar = "https://mern-frontend-git-vercelfeature-bluseels-projects.vercel.app"
-app.use((req, res, next) => {
-    const origin = originVar;
-  
-    if (allowedOrigins.includes(origin)) {
-      res.setHeader('Access-Control-Allow-Origin', origin);
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH OPTIONS');
-      res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    }
-  
-    next();
-  });
-
-//for vercel online
-app.use(cors(
-    {
-        origin : [originVar],
-        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-        credentials: true
-    }
-))
-
-//forlocal test
-// app.use(cors())
-
-
 
 const receivedURI = process.env.uri
 
