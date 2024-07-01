@@ -44,7 +44,7 @@ const startDatabase = async (customURI) =>{
 }
 
 // Default route
-router.get("/", async (req, res) => {
+app.get("/", async (req, res) => {
     try {
         res.status(200).send("meow");
     } catch (error) {
