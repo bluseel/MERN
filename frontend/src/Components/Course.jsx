@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import stl from '../Courses.module.css';
 import CreateTaskModal from './CreateTaskModal';
+import { API_BASE_URL } from '../../../.config';
+
 
 const Course = ({ course, coursesWithOverdueTasks, openEditModal, openDeleteModal, openEditTaskModal, openDeleteTaskModal , isSignedIn, selectedSectionId, fetchTasks, currentCourseId, setCurrentCourseId}) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,7 +30,7 @@ const Course = ({ course, coursesWithOverdueTasks, openEditModal, openDeleteModa
 
     console.log('adding:',newTask);
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${selectedSectionId}/courses/${course._id}/tasks/`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${selectedSectionId}/courses/${course._id}/tasks/`, {
         method: "POST",
         body: JSON.stringify({ 
           name: newTask.name, 

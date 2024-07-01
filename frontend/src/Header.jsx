@@ -4,6 +4,7 @@
   import logo from '/logo.png';
   import stl from './header.module.css';
   import AllSectionsModal from './Components/AllSectionsModal';
+  import { API_BASE_URL } from '../../.config';
 
   const Header = (props) => {
   const selectedSection = props.selectedSection 
@@ -13,7 +14,7 @@
   
     const fetchAllSections = async () => {
       try {
-        const response = await fetch("mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections", {
+        const response = await fetch(`${API_BASE_URL}/sections`, {
           method: "GET"
         });
         const result = await response.json();
