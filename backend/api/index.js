@@ -12,16 +12,16 @@ const cors = require('cors')
 
 
 //for vercel online
-// app.use(cors(
-//     {
-//         origin : ["https://mern-frontend-git-vercelfeature-bluseels-projects.vercel.app"],
-//         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-//         credentials: true
-//     }
-// ))
+app.use(cors(
+    {
+        origin : ["https://mern-frontend-git-vercelfeature-bluseels-projects.vercel.app"],
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+        credentials: true
+    }
+))
 
 //forlocal
-app.use(cors())
+// app.use(cors())
 
 
 app.use(express.json());
