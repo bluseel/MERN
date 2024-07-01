@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import stl from './Modal.module.css';
+import { API_BASE_URL } from '../../../.config';
 
 const AllSectionsModal = ({ isOpen, onRequestClose, sections, onSelectSection, fetchAllSections, isSignedIn, isSuperUser }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -14,7 +15,7 @@ const AllSectionsModal = ({ isOpen, onRequestClose, sections, onSelectSection, f
 
   const onCreateSection = async (newSectionName) => {
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/`, {
+      const response = await fetch(`${API_BASE_URL}/sections/`, {
         method: "POST",
         body: JSON.stringify({ name: newSectionName }),
         headers: {
@@ -29,7 +30,7 @@ const AllSectionsModal = ({ isOpen, onRequestClose, sections, onSelectSection, f
 
   const onEditSection = async (sectionId, sectionName) => {
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${sectionId}`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${sectionId}`, {
         method: "PATCH",
         body: JSON.stringify({ name: sectionName }),
         headers: {
@@ -44,7 +45,7 @@ const AllSectionsModal = ({ isOpen, onRequestClose, sections, onSelectSection, f
 
   const onDeleteSection = async (sectionId) => {
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${sectionId}`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${sectionId}`, {
         method: "DELETE"
       });
       fetchAllSections();

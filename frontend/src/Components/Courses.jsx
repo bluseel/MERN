@@ -8,6 +8,7 @@ import EditTaskModal from './EditTaskModal';
 import DeleteTaskModal from './DeleteTaskModal';
 import CreateCourseModal from './CreateCourseModal';
 import SigninModal from './SigninModal';
+import { API_BASE_URL } from '../../../.config';
 
 Modal.setAppElement('#root'); // This is important for accessibility reasons
 
@@ -112,7 +113,7 @@ const Courses = (props) => {
     const currentSectionId = props.selectedSection.id
     console.log('editing:',currentCourseId);
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${currentSectionId}/courses/${currentCourseId}`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${currentSectionId}/courses/${currentCourseId}`, {
         method: "PUT",
         body: JSON.stringify({ courseName: newCourseName }), 
         headers:{
@@ -131,7 +132,7 @@ const Courses = (props) => {
     const currentSectionId = props.selectedSection.id
     console.log(currentCourseId);
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${currentSectionId}/courses/${currentCourseId}`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${currentSectionId}/courses/${currentCourseId}`, {
         method: "DELETE",
       });
       setIsDeleteModalOpen(false);
@@ -149,7 +150,7 @@ const Courses = (props) => {
 
     
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${currentSectionId}/courses/${currentCourseId}/tasks/${currentTaskId}`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${currentSectionId}/courses/${currentCourseId}/tasks/${currentTaskId}`, {
         method: "PUT",
         body: JSON.stringify({ 
           name: newTaskName, 
@@ -178,7 +179,7 @@ const Courses = (props) => {
 
     const currentSectionId = props.selectedSection.id
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${currentSectionId}/courses/${currentCourseId}/tasks/${currentTaskId}`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${currentSectionId}/courses/${currentCourseId}/tasks/${currentTaskId}`, {
         method: "DELETE",
       });
       setIsDeleteTaskModalOpen(false);
@@ -195,7 +196,7 @@ const Courses = (props) => {
 
     const currentSectionId = props.selectedSection.id
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${currentSectionId}/courses/`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${currentSectionId}/courses/`, {
         method: "POST",
         body: JSON.stringify({ name: newCourseName }), 
         headers:{
@@ -214,7 +215,7 @@ const Courses = (props) => {
     
     const selectedSectionID = props.selectedSection.id;
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${selectedSectionID}/courses/`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${selectedSectionID}/courses/`, {
         method: "GET"
       });
       const data = await response.json();
@@ -238,7 +239,7 @@ const Courses = (props) => {
     
     const selectedSectionID = props.selectedSection.id;
     try {
-      const response = await fetch(`mern-backend-git-vercelfeature-bluseels-projects.vercel.app/sections/${selectedSectionID}/courses/`, {
+      const response = await fetch(`${API_BASE_URL}/sections/${selectedSectionID}/courses/`, {
         method: "GET"
       });
       const data = await response.json();
