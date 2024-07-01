@@ -14,7 +14,7 @@ const cors = require('cors')
 //for vercel online
 app.use(cors(
     {
-        origin : ["https://mern-frontend-git-vercelfeature-bluseels-projects.vercel.app"],
+        origin : ["https://mern-frontend-lake.vercel.app"],
         methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
         credentials: true
     }
