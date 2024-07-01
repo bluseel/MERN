@@ -14,7 +14,7 @@ const cors = require('cors')
 app.use(cors(
     {
         origin : [FrontEnd_BASE_URL],
-        methods: ["GET"],
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
         credentials: true
     }
 ))
