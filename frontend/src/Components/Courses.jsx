@@ -20,7 +20,7 @@ const Courses = (props) => {
   }, [props.selectedSection])
 
 
-
+  
 
   const [courses, setCourses] = useState([]);
   const [visibleCourses, setVisibleCourses] = useState({});
@@ -44,6 +44,8 @@ const Courses = (props) => {
   const [isNewModalOpen, setIsNewModalOpen] = useState(false); //creatingClass
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false); //creatingClass
   const [updatedTask, setupdatedTask] = useState(); 
+  const [overdueTaskCount, setOverdueTaskCount] = useState(0);
+
   
     
 
@@ -213,6 +215,7 @@ const Courses = (props) => {
 
   const fetchCourses = async () => {
     
+    
     const selectedSectionID = props.selectedSection.id;
     try {
       const response = await fetch(`${API_BASE_URL}/sections/${selectedSectionID}/courses/`, {
@@ -260,12 +263,44 @@ const Courses = (props) => {
 
   const checkOverdueTasks = (courses) => {
     const today = new Date().toISOString().slice(0, 10);
-    const overdueCourses = courses.filter((course) =>
-      course.tasks.some((task) => new Date(task.date) > new Date(today))
-    );
+    
+    //this one to count total overdues has .map to see alll
+    let localCountoverdueTasks = 0
+    const overdueCourses2 = courses.filter((course) => {
+      const hasOverdueTasks = course.tasks.map((task) => {
+        const isOverdue = new Date(task.date) > new Date(today);
+        if (isOverdue) {
+          localCountoverdueTasks ++;
+        }
+        return isOverdue;
+      });
+      return hasOverdueTasks;
+    });
+
+
+    //this one styel ovedue courses
+    const overdueCourses = courses.filter((course) => {
+      const hasOverdueTasks = course.tasks.some((task) => {
+        const isOverdue = new Date(task.date) > new Date(today);
+        return isOverdue;
+      });
+      return hasOverdueTasks;
+    });
+
+
+    
+    setOverdueTaskCount(localCountoverdueTasks)
     setCoursesWithOverdueTasks(overdueCourses);
   };
 
+  //change title to total over due tasks
+  useEffect(() => {  
+      document.title = (overdueTaskCount === 0? `Task Tracker`
+        : `(${overdueTaskCount}) Task Tracker`)
+
+  }, [overdueTaskCount])
+  
+  
   useEffect(() => {
     fetchCourses();
   }, []);

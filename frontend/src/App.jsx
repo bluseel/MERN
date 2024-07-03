@@ -4,33 +4,33 @@ import Header from './Header'
 
 export const App = () => {
   const dummySectoin= {
-    "id": "61826f2d61bb28a52e7aa8e3",
+    "_id": "61826f2d61bb28a52e7aa8e3",
     "name": "Find_your_section",
     "courses": [
         {
-            "name": "Click to see how to use this site vercel",
-            "id": "asdfasdfafdglkasdfjasdf",
+            "name": "Click to see how to use this site",
+            "_id": "61826f2d61bb28a52e7aa8e3s",
             "tasks": [
                 {
                     "name": "Finding Section",
                     "description": "Look up in header and click --Find your section--",
                     "date": "now",
                     "link": "http://www.google.com",
-                    "id": ""
+                    "_id": "61826f2d61bb28a52e7aa8e3sa"
                 },
                 {
                   "name": "Tutorial for moderators",
                   "description": "Click the link to see how to add courses and tasks",
                   "date": "now",
                   "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                  "id": "asdfasdfafdglkasdfjasdf2"
+                  "_id": "61826f2d61bb28a52e7aa8e3saq"
                 },
                 {
                   "name": "Add your section",
                   "description": "Contact me via my email fa22-bcs-164@cuilahore.edu.pk, I will add your section and give you login info",
                   "date": "now",
                   "link": "FA22-BCS-164@cuilahore.edu.pk",
-                  "id": "asdfasdfafdglkasdfjasdf22d"
+                  "_id": "61826f2d61bb28a52e7aa8e3saq"
                 }
             ]
         }

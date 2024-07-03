@@ -27,7 +27,7 @@ const SignInModal = ({ isOpen, onClose, setIsSignInModalOpen, setIsSignedIn, sec
   
     try {
       console.log('Submitting with:', userName, userPassword); // Log before fetch
-      setSigninProcessStatus('Signin you in, hang tight ...')
+      setSigninProcessStatus('Signing you in, hang tight ...')
   
       const response = await fetch(`${API_BASE_URL}/signin`, {
         method: 'POST',

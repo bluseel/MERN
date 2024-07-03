@@ -10,23 +10,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000; /* Ensure the overlay is on top */
 }
 
 /* Styles the modal */
 .modal {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #13A89E;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   max-width: 500px;
   width: 90%;
+  animation: slideIn 0.3s ease-out; /* Add slide in animation */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Styles for the modal header */
 .modal h2 {
-  margin-top: 0;
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 26px;
+  color: white;
+  background-color: #4B2980;
+  
+  margin-top: -30px; 
+  margin-left: -30px; 
+  margin-right: -30px; 
+  padding: 10px;
 }
 
 /* Styles the buttons */
@@ -34,17 +52,17 @@
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   margin: 10px 5px;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 
 .modal button:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 /* Styles for the cancel button */
@@ -59,18 +77,26 @@
 /* Styles the input fields */
 .modal input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
   box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
 }
 
 /* Styles for the prompt text */
 .modal p {
   font-size: 18px;
   margin-bottom: 20px;
+  color: #555;
 }
 
 .scrollContainer {
@@ -79,11 +105,26 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Add padding to the bottom to prevent overlap with the scroll bar */
+.scrollContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
 }
 
 .sectionItem {
   padding: 15px;
-  margin: 10px 0;
+  margin: 10px 0; 
   background-color: #f5f5f5;
   border-radius: 5px;
   border: 1px solid #ddd;

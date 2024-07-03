@@ -1,5 +1,6 @@
 .header{
-    background-color: rgb(40, 40, 164);
+    /* background-color: #13A89E; */
+    background-color: #4B2980;
     color: white;
 
     padding: 0.5rem 0;
@@ -12,37 +13,49 @@
     display: flex;
     width:fit-content;
     flex-direction: column;
+
 }
 
 .univName {
     font-weight: 700;
+    font-size: 1.5rem;
+
 }
 
 img{
-    width: 90px;
+    width: 7rem;
 }
 
 .campus{
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
 }
 
 .sectionName{
-    font-size: 1.2rem;
-    font-weight: 500;
-    border: 2px solid #000;
+    font-size: 1rem;
     text-align: center;
-    background-color: blue;
+    padding: 10px 10px;
 
+    font-weight: 500;
+    border: 2px solid black;
+    color: white;
+    /* background-color:#4B2980; */
+    background-color:#13A89E;
+    font-weight: 700;
+
+    transition: background-color 0.3s ease; /* Smooth background color transition */      
     
 }
 
 .sectionName:hover{
-    background-color: rgba(0, 0, 255, 0.642);
+    background-color:#31d5ca;
+    
+    
     cursor: pointer;
 }
 
 .sectionName:active{
-    background-color: rgb(61, 61, 196);
+    background-color:#117f78;
+    
     cursor:default;
 }

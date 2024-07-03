@@ -19,10 +19,16 @@
 }
 
 .courseTitle{
+    border:2px solid black ;
+    background-color: #13A89E;
+    color: white;
+    font-weight: 700;
+    transition: background-color 0.3s ease; /* Smooth background color transition */      
+
+
     display: flex;
     justify-content:space-between;
     align-items: center;
-    border:2px solid black ;
     height: fit-content;
     .courseName{
         padding: 0.4rem;        
@@ -59,13 +65,13 @@
 
 
 .courseTitle:hover{
-    background-color: rgba(255, 255, 0, 0.555);
+    background-color:#31d5ca;
     cursor: pointer;
 }
 
 
 .courseTitle:active{
-    background-color: rgb(190, 190, 30);
+    background-color:#117f78;
     cursor: pointer;
     translate: 2px 2px;
     box-shadow:none;
@@ -124,25 +130,30 @@
     border-collapse: collapse;
     
     border: 2px solid black;
+    background-color: #F5F5F5;
 }
 
 .tasktable th, .tasktable td {
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
+
 }
 
 .tasktable th {
-    
-    background-color: #f2f2f2;
+    background-color: #4B2980;
+    color: white;
+
 }
 
 .tasktable tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #F9F9F9;
+
 }
 
 .tasktable tr:hover {
-    background-color: #f1f1f1;
+    background-color: #F5F5F5;
+    
 }
 
 .tasktable a {
@@ -173,9 +184,9 @@
   
   /* Styles the modal */
   .modal {
-    background: white;
+    background-color: #13A89E;
+
     padding: 20px;
-    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 500px;
     width: 90%;
@@ -186,6 +197,12 @@
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 24px;
+    color: white;
+    background-color: #4B2980;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 10px;
   }
   
   /* Styles the buttons */
@@ -223,6 +240,7 @@
     border-radius: 4px;
     font-size: 16px;
     box-sizing: border-box;
+    outline: none;
   }
   
   /* Styles for the prompt text */
@@ -236,16 +254,27 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    border: 2px solid black;
+
     button{
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: green; /* Example background color */
+        padding:    1.5vw 2vw;
+        font-size: 1rem;
+        font-weight: 700;
+        background-color:#13A89E;
+
         color: white; /* Text color */
         border: none;
         cursor: pointer;
         outline: none; /* Remove outline on focus */
-        border-radius: 5px;
         transition: background-color 0.3s ease; /* Smooth background color transition */      
+    }
+
+    button:hover{
+    background-color:#31d5ca;
+    }
+
+    button:active{
+        background-color:#117f78;
     }
 
 }
