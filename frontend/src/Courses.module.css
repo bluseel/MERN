@@ -93,7 +93,7 @@
 }
 
 .courseTitleRed:hover{
-    background-color: rgba(255, 0, 0, 0.671);
+    background-color: rgb(252, 83, 83);
     cursor: pointer;
 }
 
