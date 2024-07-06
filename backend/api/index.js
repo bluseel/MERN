@@ -49,7 +49,24 @@ const startDatabase = async (customURI) =>{
     .catch((error)=>{
         isDatabaseConnected = error.ok
     })
-    return (isDatabaseConnected)
+   
+   return (isDatabaseConnected)
+   
+    // // for local
+    // mongoose.connect('mongodb://localhost:27017/meow', {
+    //     useNewUrlParser: true,
+    //     useUnifiedTopology: true
+    //     }).then(() => {
+    //     console.log('Connected to MongoDB');
+    //     }).catch(err => {
+    //     console.error('Error connecting to MongoDB', err);
+    //     });
+
+    // return (true)
+
+
+
+
     
 }
 
@@ -68,6 +85,7 @@ app.post('/signin', async (req, res) => {
     const { userName, userPassword} = req.body;
     console.log(`--         id:${userName},pass:${userPassword}`)
     const uri2 = `mongodb+srv://${userName}:${userPassword}@meow.yzdygsk.mongodb.net/?retryWrites=true&w=majority&appName=meow`
+   
     let notConnected = await startDatabase(uri2)
     
 

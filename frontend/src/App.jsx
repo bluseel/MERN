@@ -39,7 +39,7 @@ export const App = () => {
 }
 
   const [selectedSection, setSelectedSection] = useState(() => {
-    // Get the initial value from localStorage if it exists
+    //Get the initial value from localStorage if it exists
     const savedSection = localStorage.getItem('taskTrackerSelectedSection');
     return savedSection ? JSON.parse(savedSection) : dummySectoin;
   });

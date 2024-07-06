@@ -35,6 +35,7 @@
       setIsModalOpen(false);
     };
 
+
     return (
       <div className={stl.header}>
         <img src={logo} alt="Logo" className="logo" />
