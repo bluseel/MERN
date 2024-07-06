@@ -38,9 +38,26 @@ export const App = () => {
     "__v": 6
 }
 
-  const [selectedSection, setSelectedSection] = useState(dummySectoin);
+  const [selectedSection, setSelectedSection] = useState(() => {
+    // Get the initial value from localStorage if it exists
+    const savedSection = localStorage.getItem('taskTrackerSelectedSection');
+    return savedSection ? JSON.parse(savedSection) : dummySectoin;
+  });
+
+
   const [isSignedIn, setIsSignedIn] = useState('');
   const [isSuperUser, setIsSuperUser] = useState(false);
+
+  // Save to localStorage whenever selectedSection changes
+  useEffect(() => {
+    if (selectedSection) {
+      localStorage.setItem('taskTrackerSelectedSection', JSON.stringify(selectedSection));
+    }
+  }, [selectedSection]);
+
+
+
+
 
   useEffect(() => {
     // console.log('suuuuuuuuuuuuuuuuuuuuper')
